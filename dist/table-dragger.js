@@ -2629,9 +2629,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	      (0, _from2.default)((0, _util.getLongestRow)(originEl).children).forEach(function (cell, index) {
 	        var w = cell.getBoundingClientRect().width;
-	        var t = fakeTables[index];
-	        (0, _util.css)(t, { width: w + 'px' });
-	        (0, _util.css)(t.rows[0].children[0], { width: w + 'px' });
+					var t = fakeTables[index];
+					(0, _util.css)(t, { width: w + 'px' });
+					
+					if (t.rows.length && t.rows[0].children.length)
+	        	(0, _util.css)(t.rows[0].children[0], { width: w + 'px' });
 	      });
 	
 	      var rowHeights = (0, _from2.default)(originEl.rows).map(function (row) {
