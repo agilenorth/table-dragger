@@ -2635,7 +2635,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      });
 	
 	      var rowHeights = (0, _from2.default)(originEl.rows).map(function (row) {
-	        return row.children[0].getBoundingClientRect().height;
+					if (row.children.length)
+	        	return row.children[0].getBoundingClientRect().height;
 	      });
 	      fakeTables.forEach(function (t) {
 	        (0, _from2.default)(t.rows).forEach(function (row, index) {
